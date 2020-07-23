@@ -2,8 +2,12 @@ package utility;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -116,5 +120,23 @@ public class ExcelUtils {
 		    }
 		    System.out.println(m);
 		    System.out.println("getting base url"+m.get("baseUrl"));
+	}
+	
+	public static void createExcel() throws IOException 
+	{
+		   SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
+		   Date date = new Date();  
+		   String dateTime =  formatter.format(date);
+		   System.out.println(dateTime);  
+	       //Create Blank workbook
+		   HSSFWorkbook workbook = new HSSFWorkbook();
+
+	       //Create file system using specific name
+	       FileOutputStream out = new FileOutputStream(
+	        new File(System.getProperty("user.dir")+"\\"+dateTime+".xls"));
+
+	       //write operation workbook using file out object
+	       workbook.write(out);
+	       out.close();
 	}
 }
