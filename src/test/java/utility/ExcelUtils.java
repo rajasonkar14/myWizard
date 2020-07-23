@@ -107,7 +107,7 @@ public class ExcelUtils {
 
 		    int rowCount = s.getLastRowNum();
 		  System.out.println("no of rows : "+rowCount);
-		    for(int i=1;i <=rowCount;i++) {
+		    for(int i=0;i <=rowCount;i++) {
 		    Row row = s.getRow(i);
 		   String k= row.getCell(0).getStringCellValue();
 		   String v = row.getCell(1).getStringCellValue();
@@ -115,7 +115,6 @@ public class ExcelUtils {
 		   
 		    }
 		    System.out.println(m);
-		    System.out.println("getting base url"+m.get("baseUrl" + 
-		    		""));
+		    System.out.println("getting base url"+m.get("baseUrl"));
 	}
 }
