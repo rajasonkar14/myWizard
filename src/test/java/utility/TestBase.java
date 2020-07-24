@@ -52,6 +52,13 @@ public class TestBase {
 	 {
 		 driverWait = new WebDriverWait(driver,seconds);
 		 driverWait.until(ExpectedConditions.invisibilityOfElementLocated(data));
+	 
+	 }
+	 public static void waitForactive(By data, int seconds) 
+	 {
+		 driverWait = new WebDriverWait(driver,seconds);
+		 driverWait.until(ExpectedConditions.elementToBeClickable(data));
+	 
 	 }
 	 
 	 public  void scrnShot(String name) throws IOException 
