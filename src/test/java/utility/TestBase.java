@@ -105,7 +105,7 @@ public class TestBase {
 	 {
 		 driver.findElement(locatorValue).click();
 	 }
-	// @AfterClass
+	// @AfterClass to close the browser
 	 public void tearDown() 
 	 {
 		 driver.quit();
